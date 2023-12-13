@@ -10,11 +10,11 @@ The primary purpose of GeoWeatherHub is to allow users to explore and pin locati
 
 ## Technologies Used
 
-- **Node.js**:
-- **Express.js**:
-- **GraphQL**:
-- **Google Maps JavaScript API**:
-- **OpenWeatherMap API**:
+- **Node.js**
+- **Express.js**
+- **GraphQL**
+- **Google Maps JavaScript API**
+- **OpenWeatherMap API**
 
 ## Getting Started
 
