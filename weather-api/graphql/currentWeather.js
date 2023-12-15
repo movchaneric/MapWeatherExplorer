@@ -63,6 +63,9 @@ const weatherLatLon = new GraphQLObjectType({
     main: {
       type: mainType,
     },
+    name: {
+      type: GraphQLString,
+    },
   }),
 });
 

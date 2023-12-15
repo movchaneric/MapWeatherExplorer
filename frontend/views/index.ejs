@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link href="static/css/style.css" rel="stylesheet" media="all" />
+    <script src="static/map-helper.js"></script>
+
+    <title><%= pageTitle %></title>
+  </head>
+  <body class="body-style">
+    <h3>Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <!-- Used  defer to not interupt the DOM to load-->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=<%= apiKey %>&callback=initMap"
+    ></script>
+  </body>
+</html>
