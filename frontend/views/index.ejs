@@ -17,9 +17,10 @@
     <nav
       class="navbar navbar-light"
       style="background-color: #e3f2fd; margin-bottom: 20px"
+      id="mainNavBar"
     >
       <!-- Navbar content -->
-      <h3>Google maps weather demo</h3>
+      <h3>GeoWeatherHub</h3>
       <button
         class="navbar-toggler"
         type="button"
@@ -33,7 +34,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#"
+          <a class="nav-item nav-link active" href="#home"
             >Home <span class="sr-only">(current)</span></a
           >
           <a class="nav-item nav-link" href="#about">About the project</a>
@@ -48,6 +49,7 @@
 
     <div id="about">
       <h3>About project:</h3>
+      <a class="top" href="#mainNavBar">Back to Top ↑</a>
     </div>
 
     <script
@@ -73,7 +75,7 @@
     ></script>
 
     <script>
-      document.querySelector('a[href^="#"]').forEach((anchor) => {
+      document.querySelector('a[href^="#"]').foreach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
           document.querySelector(
