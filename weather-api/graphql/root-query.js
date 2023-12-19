@@ -15,13 +15,13 @@ module.exports = new GraphQLObjectType({
         lat: {
           type: GraphQLFloat,
         },
-        lon: {
+        lgn: {
           type: GraphQLFloat,
         },
       },
       resolve: async (parent, args) => {
         const res = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${args.lat}&lon=${args.lon}&units=metric&appid=${process.env.WEATHER_API}`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${args.lat}&lon=${args.lgn}&units=metric&appid=${process.env.WEATHER_API}`
         );
         console.log(res.data.main);
         return res.data;

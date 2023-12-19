@@ -45,6 +45,14 @@
     <!--The div element for the map -->
     <div id="main-map">
       <div id="map"></div>
+
+      <div id="weather-data">
+        <h3>Weather Information</h3>
+        <p id="weather-data-city" class="weather-subtitle">City:</p>
+        <p id="weather-data-temperature" class="weather-subtitle">
+          Temperature:
+        </p>
+      </div>
     </div>
 
     <div id="about">
@@ -67,7 +75,7 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <!-- Used  defer to not interupt the DOM to load-->
+    <!-- Google Maps API key , Used defer to not interupt the DOM to load and then execute the async function-->
     <script
       async
       defer
@@ -75,6 +83,20 @@
     ></script>
 
     <script>
+      // Call the getWeather function and handle the result
+      // getWeather(function (weatherData) {
+      //   if (weatherData) {
+      //     console.log("Weather data:", weatherData);
+      //     // Access and display weather data in your HTML elements
+      //     document.getElementById("weather-data-city").innerText =
+      //       "City: " + weatherData.data.currentWeather.name;
+      //     document.getElementById("weather-data-temperature").innerText =
+      //       "Temperature: " + weatherData.data.currentWeather.main.temp;
+      //   } else {
+      //     console.log("No weather data available");
+      //   }
+      // });
+
       document.querySelector('a[href^="#"]').foreach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
@@ -84,6 +106,7 @@
             })
           );
         });
+        r;
       });
     </script>
   </body>

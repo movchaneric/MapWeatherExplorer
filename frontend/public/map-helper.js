@@ -80,7 +80,64 @@ function placeMarker(location, map) {
   });
 
   markers.push(marker);
-  getMarkerCoordinates(markers);
+
+  getWeather(markers)
+    .then((res) => {
+      console.log("getWeather success...");
+    })
+    .catch((err) => console.log("error in getWeather is placeMarker: ", err));
+}
+
+async function getWeather(markers) {
+  if (markers === 0) {
+    console.log("No marker was assigned...");
+    return null;
+  }
+
+  //get the coordinates
+  const coords = getMarkerCoordinates(markers);
+
+  const weatherQuery = {
+    query: `
+      query GetCurrentWeather($lat: Float!, $lng: Float!) {
+        currentWeather(lat: $lat, lgn: $lng) {
+          name
+          main {
+            temp
+          }
+        }
+      }
+    `,
+    variables: {
+      lat: coords.lat,
+      lng: coords.lng,
+    },
+  };
+
+  try {
+    const res = await fetch("http://localhost:3000/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(weatherQuery),
+    });
+
+    const resData = await res.json();
+
+    if (resData) {
+      //sent resData to ejs file
+      document.getElementById("weather-data-city").innerText =
+        "City: " + resData.data.currentWeather.name;
+      document.getElementById("weather-data-temperature").innerText =
+        "Tempreture: " + resData.data.currentWeather.main.temp;
+
+      return resData;
+    }
+  } catch (err) {
+    console.log("error fetching weather data: ", err);
+    return null;
+  }
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -93,6 +150,4 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-
-// window.initMap = initMap;
 initMap();

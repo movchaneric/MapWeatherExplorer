@@ -11,6 +11,23 @@
   border-radius: 25px;
   margin: auto;
 }
+
+#weather-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-title {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.weather-subtitle {
+  text-align: center;
+}
+
+
 html,
 body {
   height: 100%;
