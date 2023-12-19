@@ -9,6 +9,7 @@
       crossorigin="anonymous"
     />
     <link href="static/css/style.css" rel="stylesheet" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="static/map-helper.js"></script>
 
     <title><%= pageTitle %></title>
@@ -56,8 +57,45 @@
     </div>
 
     <div id="about">
-      <h3>About project:</h3>
-      <a class="top" href="#mainNavBar">Back to Top ↑</a>
+        <div
+          class="container-fluid bg-primary py-5 bg-header"
+          style="margin-bottom: 90px"
+        >
+          <div class="row py-5">
+            <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+              <h1 class="display-4 text-white animated zoomIn">About The Project</h1>
+              <p class="text-white about-paragraph">
+                The primary purpose of GeoWeatherHub is to allow users to explore and pin locations
+                on an interactive map and retrieve real-time weather information for those locations.
+                Whether you're planning a trip, curious about the weather in different cities, or
+                just want to explore weather patterns around the world, GeoWeatherHub has you covered.
+              </p>
+            </div>
+          </div>
+
+          <div id="technologies-used" class="container-fluid bg-white py-5">
+            <div class="row">
+              <div class="col-12 text-center">
+                <h2 class="display-4">Technologies Used</h2>
+                <ul>
+                  <li>Node.js</li>
+                  <li>Express.js</li>
+                  <li>GraphQL</li>
+                  <li>Google Maps JavaScript API</li>
+                  <li>OpenWeatherMap API</li>
+                </ul>
+
+                <!-- GitHub Link -->
+                <a href="https://github.com/movchaneric" target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-github" style="font-size:36px"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a class="top" href="#mainNavBar">Back to Top ↑</a>
+        </div>
+      </div>
     </div>
 
     <script

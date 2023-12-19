@@ -132,7 +132,7 @@ async function getWeather(markers) {
       document.getElementById("weather-data-temperature").innerText =
         "Tempreture: " + resData.data.currentWeather.main.temp;
 
-      return resData;
+      // return resData;
     }
   } catch (err) {
     console.log("error fetching weather data: ", err);
