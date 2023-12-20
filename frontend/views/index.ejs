@@ -9,15 +9,18 @@
       crossorigin="anonymous"
     />
     <link href="static/css/style.css" rel="stylesheet" media="all" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="static/map-helper.js"></script>
 
     <title><%= pageTitle %></title>
   </head>
   <body class="body-style">
     <nav
-      class="navbar navbar-light"
-      style="background-color: #e3f2fd; margin-bottom: 20px"
+      class="navbar navbar-light bg-primary py-3 bg-header"
+      style="background-color: #e3f2fd; margin-bottom: 20px; color: white"
       id="mainNavBar"
     >
       <!-- Navbar content -->
@@ -45,6 +48,7 @@
 
     <!--The div element for the map -->
     <div id="main-map">
+      <!-- Map will be displayed here -->
       <div id="map"></div>
 
       <div id="weather-data">
@@ -53,48 +57,56 @@
         <p id="weather-data-temperature" class="weather-subtitle">
           Temperature:
         </p>
+        <p id="weather-data-humidity" class="weather-subtitle">Humidity:</p>
       </div>
     </div>
 
     <div id="about">
-        <div
-          class="container-fluid bg-primary py-5 bg-header"
-          style="margin-bottom: 90px"
-        >
-          <div class="row py-5">
-            <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-              <h1 class="display-4 text-white animated zoomIn">About The Project</h1>
-              <p class="text-white about-paragraph">
-                The primary purpose of GeoWeatherHub is to allow users to explore and pin locations
-                on an interactive map and retrieve real-time weather information for those locations.
-                Whether you're planning a trip, curious about the weather in different cities, or
-                just want to explore weather patterns around the world, GeoWeatherHub has you covered.
-              </p>
-            </div>
+      <div
+        class="container-fluid bg-primary py-5 bg-header"
+        style="margin-bottom: 90px"
+      >
+        <div class="row py-5">
+          <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">
+              About The Project
+            </h1>
+            <p class="text-white about-paragraph">
+              The primary purpose of GeoWeatherHub is to allow users to explore
+              and pin locations on an interactive map and retrieve real-time
+              weather information for those locations. Whether you're planning a
+              trip, curious about the weather in different cities, or just want
+              to explore weather patterns around the world, GeoWeatherHub has
+              you covered.
+            </p>
           </div>
-
-          <div id="technologies-used" class="container-fluid bg-white py-5">
-            <div class="row">
-              <div class="col-12 text-center">
-                <h2 class="display-4">Technologies Used</h2>
-                <ul>
-                  <li>Node.js</li>
-                  <li>Express.js</li>
-                  <li>GraphQL</li>
-                  <li>Google Maps JavaScript API</li>
-                  <li>OpenWeatherMap API</li>
-                </ul>
-
-                <!-- GitHub Link -->
-                <a href="https://github.com/movchaneric" target="_blank" rel="noopener noreferrer">
-                  <i class="fa fa-github" style="font-size:36px"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <a class="top" href="#mainNavBar">Back to Top ↑</a>
         </div>
+
+        <div id="technologies-used" class="container-fluid bg-white py-5">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h2 class="display-4">Technologies Used</h2>
+              <ul>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>GraphQL</li>
+                <li>Google Maps JavaScript API</li>
+                <li>OpenWeatherMap API</li>
+              </ul>
+
+              <!-- GitHub Link -->
+              <a
+                href="https://github.com/movchaneric"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa fa-github" style="font-size: 36px"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a class="top" href="#mainNavBar">Back to Top ↑</a>
       </div>
     </div>
 
@@ -121,20 +133,19 @@
     ></script>
 
     <script>
-      // Call the getWeather function and handle the result
-      // getWeather(function (weatherData) {
-      //   if (weatherData) {
-      //     console.log("Weather data:", weatherData);
-      //     // Access and display weather data in your HTML elements
-      //     document.getElementById("weather-data-city").innerText =
-      //       "City: " + weatherData.data.currentWeather.name;
-      //     document.getElementById("weather-data-temperature").innerText =
-      //       "Temperature: " + weatherData.data.currentWeather.main.temp;
-      //   } else {
-      //     console.log("No weather data available");
-      //   }
-      // });
+      // Back to top button disapear when reaching the top of the page
+      document.addEventListener("DOMContentLoaded", function () {
+        var backButton = document.querySelector(".top");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 200) {
+            backButton.style.display = "block";
+          } else {
+            backButton.style.display = "none";
+          }
+        });
+      });
 
+      //Scroll animation when clicking navbar button
       document.querySelector('a[href^="#"]').foreach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();

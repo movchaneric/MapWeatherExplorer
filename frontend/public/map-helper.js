@@ -104,6 +104,7 @@ async function getWeather(markers) {
           name
           main {
             temp
+            humidity
           }
         }
       }
@@ -129,10 +130,13 @@ async function getWeather(markers) {
       //sent resData to ejs file
       document.getElementById("weather-data-city").innerText =
         "City: " + resData.data.currentWeather.name;
-      document.getElementById("weather-data-temperature").innerText =
-        "Tempreture: " + resData.data.currentWeather.main.temp;
 
-      // return resData;
+      document.getElementById("weather-data-temperature").innerText =
+        "Tempreture: " + resData.data.currentWeather.main.temp + " °C";
+
+      document.getElementById("weather-data-humidity").innerText =
+        "Humidity: " + resData.data.currentWeather.main.humidity + " %";
+      console.log(resData);
     }
   } catch (err) {
     console.log("error fetching weather data: ", err);
