@@ -6,7 +6,7 @@ async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
   //TODO: place a marker on a defualt location
   map = new Map(document.getElementById("map"), {
-    center: { lat: 32.091416603568305, lng: 34.78660485314087 },
+    center: { lat: 48.8566, lng: 2.3522 },
     zoom: 14,
   });
 
