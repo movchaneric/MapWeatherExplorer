@@ -41,6 +41,10 @@ The primary purpose of GeoWeatherHub is to allow users to explore and pin locati
 
 1. **Run the project:**
 
+   ```bash
+      https://mapweatherexplorer-faa61624a86a.herokuapp.com/
+   ```
+
 ```js
 npm start
 ```
