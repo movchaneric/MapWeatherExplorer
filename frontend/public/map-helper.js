@@ -116,13 +116,16 @@ async function getWeather(markers) {
   };
 
   try {
-    const res = await fetch("http://localhost:3000/graphql", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(weatherQuery),
-    });
+    const res = await fetch(
+      "https://mapweatherexplorer-faa61624a86a.herokuapp.com/graphql",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(weatherQuery),
+      }
+    );
 
     const resData = await res.json();
 
