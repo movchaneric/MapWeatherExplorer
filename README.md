@@ -39,30 +39,32 @@ The primary purpose of GeoWeatherHub is to allow users to explore and pin locati
 
 ## Usage
 
-1. **Run the project:**
+**Visit the Application:**
 
-   ```bash
-      https://mapweatherexplorer-faa61624a86a.herokuapp.com/
-   ```
+```bash
+   https://mapweatherexplorer-faa61624a86a.herokuapp.com/
+
+```
+
+**Run the project:**
 
 ```js
 npm start
 ```
 
-2. **Visit the Application:**
+- Open your preferred web browser.
+- Navigate to the application at `http://localhost:3000` (or the URL where your application is hosted).
 
-   - Open your preferred web browser.
-   - Navigate to the application at `http://localhost:3000` (or the URL where your application is hosted).
+**Explore the Map:**
 
-3. **Explore the Map:**
+- Use the interactive map to explore different locations.
 
-   - Use the interactive map to explore different locations.
+**Pin Locations:**
 
-4. **Pin Locations:**
+- Click on the map to pin locations you are interested in.
 
-   - Click on the map to pin locations you are interested in.
+**View Real-Time Weather Information:**
 
-5. **View Real-Time Weather Information:**
-   - Click on the pinned locations to retrieve and view real-time weather information.
+- Click on the pinned locations to retrieve and view real-time weather information.
 
 Happy exploring
